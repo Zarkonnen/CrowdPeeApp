@@ -39,7 +39,7 @@
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];*/
     
     // Load data from API
-    NSURL *url = [NSURL URLWithString:@"http://nearbysources.com/q/1/en/jsonresults.json"];
+    NSURL *url = [NSURL URLWithString:@"http://nearbysources.com/q/1/en/get_all_questions_and_locations"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     NSDictionary *data = (NSDictionary*) [self jsonFromSynchronousRequest:request];
     NSLog(@"%@", data);
