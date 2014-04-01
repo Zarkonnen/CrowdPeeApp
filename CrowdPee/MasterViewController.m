@@ -10,6 +10,8 @@
 
 #import "DetailViewController.h"
 
+#import "CPLocation.h"
+
 @interface MasterViewController () {
     NSMutableArray *_objects;
 }
@@ -30,11 +32,42 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    /*self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];*/
+    
+    // Load data from API
+    NSURL *url = [NSURL URLWithString:@"http://nearbysources.com/q/1/en/jsonresults.json"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSDictionary *data = (NSDictionary*) [self jsonFromSynchronousRequest:request];
+    NSLog(@"%@", data);
+    
+    // Put into list
+    _objects = [[NSMutableArray alloc] init];
+    NSArray *locs = data[@"Locations"];
+    for (id o in locs) {
+        NSString *name = ((NSDictionary *) o)[@"Name"];
+        CPLocation *loc = [[CPLocation alloc] init];
+        loc.name = name;
+        [_objects addObject:loc];
+    }
+}
+
+- (NSObject*) jsonFromSynchronousRequest:(NSURLRequest*)request {
+    NSError *responseError = nil;
+    NSError *decodeError = nil;
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&responseError];
+    if (! responseError) {
+        NSObject *data = [NSJSONSerialization JSONObjectWithData:response options:0 error:&decodeError];
+        if (!decodeError) {
+            return data;
+        } else {
+            NSLog(@"Error decoding: %@", [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding]);
+        }
+    }
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +81,7 @@
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    [_objects insertObject:[[CPLocation alloc] init] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -69,7 +102,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
+    CPLocation *object = _objects[indexPath.row];
     cell.textLabel.text = [object description];
     return cell;
 }

@@ -23,6 +23,7 @@
 		5D04654918DF45E10067825A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D04652518DF45E10067825A /* UIKit.framework */; };
 		5D04655118DF45E10067825A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D04654F18DF45E10067825A /* InfoPlist.strings */; };
 		5D04655318DF45E10067825A /* CrowdPeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D04655218DF45E10067825A /* CrowdPeeTests.m */; };
+		5D04655E18DF48F00067825A /* CPLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D04655D18DF48F00067825A /* CPLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		5D04654E18DF45E10067825A /* CrowdPeeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrowdPeeTests-Info.plist"; sourceTree = "<group>"; };
 		5D04655018DF45E10067825A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5D04655218DF45E10067825A /* CrowdPeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrowdPeeTests.m; sourceTree = "<group>"; };
+		5D04655C18DF48F00067825A /* CPLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLocation.h; sourceTree = "<group>"; };
+		5D04655D18DF48F00067825A /* CPLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				5D04653D18DF45E10067825A /* DetailViewController.m */,
 				5D04653F18DF45E10067825A /* Images.xcassets */,
 				5D04652818DF45E10067825A /* Supporting Files */,
+				5D04655C18DF48F00067825A /* CPLocation.h */,
+				5D04655D18DF48F00067825A /* CPLocation.m */,
 			);
 			path = CrowdPee;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				5D04653B18DF45E10067825A /* MasterViewController.m in Sources */,
 				5D04652E18DF45E10067825A /* main.m in Sources */,
 				5D04653E18DF45E10067825A /* DetailViewController.m in Sources */,
+				5D04655E18DF48F00067825A /* CPLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
