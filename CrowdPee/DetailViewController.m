@@ -7,13 +7,170 @@
 //
 
 #import "DetailViewController.h"
+#import "CPLocation.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
+
+- (IBAction)toiletsUnisexClick:(id)sender;
+- (IBAction)toiletsGenderedClick:(id)sender;
+- (IBAction)toiletsDontKnowClick:(id)sender;
+- (IBAction)wheelchairYesClick:(id)sender;
+- (IBAction)wheelchairNoClick:(id)sender;
+- (IBAction)wheelchairDontKnowClick:(id)sender;
+- (IBAction)babyEveryoneClick:(id)sender;
+- (IBAction)babyWomenClick:(id)sender;
+- (IBAction)babyNoClick:(id)sender;
+- (IBAction)babyDontKnowClick:(id)sender;
+
+
 @end
 
 @implementation DetailViewController
+
+- (IBAction)toiletsUnisexClick:(id)sender {
+    self.toiletsValue = 1;
+    [self checkQuestionnaireState];
+}
+- (IBAction)toiletsGenderedClick:(id)sender {
+    self.toiletsValue = 2;
+    [self checkQuestionnaireState];
+}
+- (IBAction)toiletsDontKnowClick:(id)sender {
+    self.toiletsValue = 3;
+    [self checkQuestionnaireState];
+}
+- (IBAction)wheelchairYesClick:(id)sender {
+    self.wheelchairValue = 4;
+    [self checkQuestionnaireState];
+}
+- (IBAction)wheelchairNoClick:(id)sender {
+    self.wheelchairValue = 5;
+    [self checkQuestionnaireState];
+}
+- (IBAction)wheelchairDontKnowClick:(id)sender {
+    self.wheelchairValue = 6;
+    [self checkQuestionnaireState];
+}
+- (IBAction)babyEveryoneClick:(id)sender {
+    self.babyValue = 7;
+    [self checkQuestionnaireState];
+}
+- (IBAction)babyWomenClick:(id)sender {
+    self.babyValue = 8;
+    [self checkQuestionnaireState];
+}
+- (IBAction)babyNoClick:(id)sender {
+    self.babyValue = 9;
+    [self checkQuestionnaireState];
+}
+- (IBAction)babyDontKnowClick:(id)sender {
+    self.babyValue = 10;
+    [self checkQuestionnaireState];
+}
+
+- (void)checkQuestionnaireState {
+    if (self.toiletsValue == 1) {
+        self.toiletsUnisex.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.toiletsUnisex.backgroundColor = nil;
+    }
+    if (self.toiletsValue == 2) {
+        self.toiletsGendered.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.toiletsGendered.backgroundColor = nil;
+    }
+    if (self.toiletsValue == 3) {
+        self.toiletsDontKnow.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.toiletsDontKnow.backgroundColor = nil;
+    }
+    
+    if (self.wheelchairValue == 4) {
+        self.wheelchairYes.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.wheelchairYes.backgroundColor = nil;
+    }
+    if (self.wheelchairValue == 5) {
+        self.wheelchairNo.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.wheelchairNo.backgroundColor = nil;
+    }
+    if (self.wheelchairValue == 6) {
+        self.wheelchairDontKnow.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.wheelchairDontKnow.backgroundColor = nil;
+    }
+    
+    if (self.babyValue == 7) {
+        self.babyEveryone.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.babyEveryone.backgroundColor = nil;
+    }
+    if (self.babyValue == 8) {
+        self.babyWomen.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.babyWomen.backgroundColor = nil;
+    }
+    if (self.babyValue == 9) {
+        self.babyNo.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.babyNo.backgroundColor = nil;
+    }
+    if (self.babyValue == 10) {
+        self.babyDontKnow.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.6 alpha:1.0];
+    } else {
+        self.babyDontKnow.backgroundColor = nil;
+    }
+    
+    if (self.toiletsValue != -1 && self.wheelchairValue != -1 && self.babyValue != -1) {
+        self.toiletsQ.hidden = true;
+        self.toiletsUnisex.hidden = true;
+        self.toiletsGendered.hidden = true;
+        self.toiletsDontKnow.hidden = true;
+        
+        self.wheelchairQ.hidden = true;
+        self.wheelchairYes.hidden = true;
+        self.wheelchairNo.hidden = true;
+        self.wheelchairDontKnow.hidden = true;
+        
+        self.babyQ.hidden = true;
+        self.babyEveryone.hidden = true;
+        self.babyWomen.hidden = true;
+        self.babyNo.hidden = true;
+        self.babyDontKnow.hidden = true;
+        
+        self.submitSpinner.hidden = false;
+        self.submitLabel.hidden = false;
+        [self.submitSpinner startAnimating];
+        
+        NSArray *answerList = @[
+                                @{@"question": @1, @"option": [NSNumber numberWithInt: self.toiletsValue]},
+                                @{@"question": @2, @"option": [NSNumber numberWithInt: self.wheelchairValue]},
+                                @{@"question": @3, @"option": [NSNumber numberWithInt: self.babyValue]}
+        ];
+        NSDictionary *postData = @{@"answers": answerList};
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:postData options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        jsonString = [NSString stringWithFormat:@"data=%@", jsonString];
+        NSLog(@"JSON Output: %@", jsonString);
+        jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://nearbysources.com/q/1/%d/en/submit_response", ((CPLocation *) self.detailItem).id]];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        //[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        //[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:[NSString stringWithFormat:@"%d", [jsonData length]] forHTTPHeaderField:@"Content-Length"];
+        [request setHTTPBody: jsonData];
+        [NSURLConnection connectionWithRequest:request delegate:self];
+    }
+}
+
+- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [self.submitSpinner stopAnimating];
+    self.submitLabel.text = @"Thanks!";
+}
 
 #pragma mark - Managing the detail item
 
@@ -34,10 +191,12 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.questionnaireNavigationItem.title = ((CPLocation *) self.detailItem).name;
     }
+    self.toiletsValue = -1;
+    self.wheelchairValue = -1;
+    self.babyValue = -1;
 }
 
 - (void)viewDidLoad

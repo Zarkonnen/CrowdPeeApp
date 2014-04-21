@@ -11,6 +11,7 @@
 @implementation CPLocation
 
 @synthesize name;
+@synthesize id;
 
 - (NSString *)description {
     return self.name;

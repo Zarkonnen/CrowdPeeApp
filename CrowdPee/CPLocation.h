@@ -11,6 +11,7 @@
 @interface CPLocation : NSObject
 
 @property NSString *name;
+@property int id;
 
 - (NSString *)description;
 

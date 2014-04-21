@@ -12,5 +12,31 @@
 
 @property (strong, nonatomic) id detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *toiletsQ;
+@property (weak, nonatomic) IBOutlet UIButton *toiletsUnisex;
+@property (weak, nonatomic) IBOutlet UIButton *toiletsGendered;
+@property (weak, nonatomic) IBOutlet UIButton *toiletsDontKnow;
+
+@property (weak, nonatomic) IBOutlet UILabel *wheelchairQ;
+@property (weak, nonatomic) IBOutlet UIButton *wheelchairYes;
+@property (weak, nonatomic) IBOutlet UIButton *wheelchairNo;
+@property (weak, nonatomic) IBOutlet UIButton *wheelchairDontKnow;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *babyQ;
+@property (weak, nonatomic) IBOutlet UIButton *babyEveryone;
+@property (weak, nonatomic) IBOutlet UIButton *babyWomen;
+@property (weak, nonatomic) IBOutlet UIButton *babyNo;
+@property (weak, nonatomic) IBOutlet UIButton *babyDontKnow;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *submitSpinner;
+@property (weak, nonatomic) IBOutlet UILabel *submitLabel;
+
+
+@property int toiletsValue;
+@property int wheelchairValue;
+@property int babyValue;
+
+@property (weak, nonatomic) IBOutlet UINavigationItem *questionnaireNavigationItem;
 @end

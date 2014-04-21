@@ -87,6 +87,9 @@
                                 <state key="normal" title="Unisex">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toiletsUnisexClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="vaD-El-fRM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66P-TP-qUM">
                                 <rect key="frame" x="20" y="125" width="280" height="30"/>
@@ -94,6 +97,9 @@
                                 <state key="normal" title="Gendered (male/female)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toiletsGenderedClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="LCb-o2-w6c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H03-WT-FcE">
                                 <rect key="frame" x="20" y="158" width="280" height="30"/>
@@ -101,6 +107,9 @@
                                 <state key="normal" title="Don't know">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toiletsDontKnowClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="glL-Z8-OAK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are they wheelchair-accessible?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QL6-M1-sW4">
                                 <rect key="frame" x="20" y="196" width="280" height="21"/>
@@ -115,6 +124,9 @@
                                 <state key="normal" title="Yes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="wheelchairYesClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="hj8-y6-gJ8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJt-po-eZb">
                                 <rect key="frame" x="20" y="253" width="280" height="30"/>
@@ -122,6 +134,9 @@
                                 <state key="normal" title="No">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="wheelchairNoClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="NCl-8c-5po"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyL-RJ-vx9">
                                 <rect key="frame" x="20" y="286" width="280" height="30"/>
@@ -129,6 +144,9 @@
                                 <state key="normal" title="Don't know">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="wheelchairDontKnowClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="7cp-kH-fO8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are there baby-changing facilities?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s70-AF-yQx">
                                 <rect key="frame" x="20" y="324" width="280" height="21"/>
@@ -143,6 +161,9 @@
                                 <state key="normal" title="Yes, everyone can access them">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="babyEveryoneClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="bpf-pD-nmH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olc-gv-fn8">
                                 <rect key="frame" x="20" y="381" width="280" height="30"/>
@@ -150,6 +171,9 @@
                                 <state key="normal" title="Yes, only for women">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="babyWomenClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="ti0-ge-0Oo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbI-Fa-dkM">
                                 <rect key="frame" x="20" y="414" width="280" height="30"/>
@@ -157,6 +181,9 @@
                                 <state key="normal" title="No">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="babyNoClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="NEB-le-4Sy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLJ-zH-1cI">
                                 <rect key="frame" x="20" y="447" width="280" height="30"/>
@@ -164,11 +191,43 @@
                                 <state key="normal" title="Don't know">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="babyDontKnowClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="YUt-p6-OHb"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LtF-EQ-NYF">
+                                <rect key="frame" x="150" y="182" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Submitting Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cv-Ey-uD2">
+                                <rect key="frame" x="72" y="210" width="176" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Questionnaire" id="cra-N8-TIN"/>
+                    <connections>
+                        <outlet property="babyDontKnow" destination="zLJ-zH-1cI" id="yCn-kF-IQP"/>
+                        <outlet property="babyEveryone" destination="UQb-L8-ROf" id="KG5-cg-hxI"/>
+                        <outlet property="babyNo" destination="KbI-Fa-dkM" id="5jg-XX-eDR"/>
+                        <outlet property="babyQ" destination="s70-AF-yQx" id="9GJ-HB-3x6"/>
+                        <outlet property="babyWomen" destination="olc-gv-fn8" id="6LO-bY-Rya"/>
+                        <outlet property="questionnaireNavigationItem" destination="cra-N8-TIN" id="LGf-H0-RgO"/>
+                        <outlet property="submitLabel" destination="6Cv-Ey-uD2" id="KBP-2d-8Di"/>
+                        <outlet property="submitSpinner" destination="LtF-EQ-NYF" id="6oK-rN-IxI"/>
+                        <outlet property="toiletsDontKnow" destination="H03-WT-FcE" id="gak-Il-YKP"/>
+                        <outlet property="toiletsGendered" destination="66P-TP-qUM" id="BSO-Ui-rzt"/>
+                        <outlet property="toiletsQ" destination="AGg-MC-V9w" id="2Fk-dk-T9n"/>
+                        <outlet property="toiletsUnisex" destination="AEO-g1-fNS" id="HfL-Zg-ZPb"/>
+                        <outlet property="wheelchairDontKnow" destination="qyL-RJ-vx9" id="iiP-LB-bw7"/>
+                        <outlet property="wheelchairNo" destination="CJt-po-eZb" id="O4o-fj-P14"/>
+                        <outlet property="wheelchairQ" destination="QL6-M1-sW4" id="eOz-dR-O4k"/>
+                        <outlet property="wheelchairYes" destination="np3-7p-CPJ" id="2Yl-Uj-YNb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>

@@ -42,15 +42,16 @@
     NSURL *url = [NSURL URLWithString:@"http://nearbysources.com/q/1/en/get_all_questions_and_locations"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     NSDictionary *data = (NSDictionary*) [self jsonFromSynchronousRequest:request];
-    NSLog(@"%@", data);
     
     // Put into list
     _objects = [[NSMutableArray alloc] init];
     NSArray *locs = data[@"Locations"];
     for (id o in locs) {
         NSString *name = ((NSDictionary *) o)[@"Name"];
+        int id = [(NSNumber *) ((NSDictionary *) o)[@"ID"] intValue];
         CPLocation *loc = [[CPLocation alloc] init];
         loc.name = name;
+        loc.id = id;
         [_objects addObject:loc];
     }
 }
